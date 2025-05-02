@@ -6,8 +6,8 @@ public class FollowCamera : MonoBehaviour
     private float offsetX;
     private float offsetY;
     
-    public Vector2 minPosition;
-    public Vector2 maxPosition;
+    public Vector2 minPosition; // 수정 필요
+    public Vector2 maxPosition; // 수정 필요
 
     private void Start()
     {
