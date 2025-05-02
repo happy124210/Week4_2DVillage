@@ -25,7 +25,7 @@ MonoBehaviour:
     - {fileID: 21300000, guid: b5e90995ec40e834a8d859e7d30df019, type: 3}
     - {fileID: 21300000, guid: b5e90995ec40e834a8d859e7d30df019, type: 3}
     - {fileID: 21300000, guid: b5e90995ec40e834a8d859e7d30df019, type: 3}
-    - {fileID: 0}
+    - {fileID: 21300000, guid: b5e90995ec40e834a8d859e7d30df019, type: 3}
     - {fileID: 21300000, guid: 4221c3fe77a110f4696f214d36372d3f, type: 3}
     - {fileID: 21300000, guid: f0bb8bff31ede744aa0d5d69088c8dd9, type: 3}
     m_GameObject: {fileID: 0}
