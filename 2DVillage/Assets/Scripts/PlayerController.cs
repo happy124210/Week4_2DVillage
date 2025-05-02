@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : BaseController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Camera camera;
 
-    // Update is called once per frame
-    void Update()
+    protected override void Start()
     {
-        
+        base.Start();
+        camera = Camera.main;
+    }    
+
+    protected override void HandleAction()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+        movementDirection = new Vector2(horizontal, vertical).normalized;
+
+        Vector2 mousePosition = Input.mousePosition;
+        Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
+        lookDirection = (worldPos - (Vector2)transform.position);
+
+        lookDirection = (lookDirection.magnitude < .9f) // deadzone
+            ? Vector2.zero
+            : lookDirection.normalized;
     }
 }

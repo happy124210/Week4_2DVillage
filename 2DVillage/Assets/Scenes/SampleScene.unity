@@ -468,6 +468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c1239bb0037d042bf7fd75d8a1a5ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterRenderer: {fileID: 155988593}
+  weaponPivot: {fileID: 592467981}
 --- !u!61 &1969986094
 BoxCollider2D:
   m_ObjectHideFlags: 0
