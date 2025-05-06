@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance { get; private set; }
     [SerializeField] private Sprite fullHeart, halfHeart, emptyHeart;
     [SerializeField] private Image[] heartImages;
+    
+    [SerializeField] private TextMeshProUGUI coinText;
 
     private void Awake()
     {
@@ -26,4 +29,11 @@ public class UIManager : MonoBehaviour
                 heartImages[i].sprite = emptyHeart;
         }
     }
+    
+    
+    public void UpdateCoinUI(int count)
+    {
+        coinText.text = count.ToString();
+    }
+
 }

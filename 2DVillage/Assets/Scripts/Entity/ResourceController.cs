@@ -14,6 +14,9 @@ namespace Entity
 
         public int CurrentHealth { get; private set; }
         public int MaxHealth => statHandler.MaxHealth;
+        public int CoinCount => statHandler.CoinCount;
+        
+        private const string CoinKey = "coin_count";
 
         private void Awake()
         {
@@ -25,6 +28,8 @@ namespace Entity
         private void Start()
         {
             CurrentHealth = MaxHealth;
+            LoadCoin();
+            UIManager.Instance.UpdateCoinUI(statHandler.CoinCount);
         }
 
         private void Update()
@@ -66,6 +71,24 @@ namespace Entity
         {
 
         }
+        
+        public void AddCoin(int amount)
+        {
+            statHandler.AddCoin(amount);
+            SaveCoin();
+            UIManager.Instance.UpdateCoinUI(statHandler.CoinCount);
+        }
+        
+        private void SaveCoin()
+        {
+            PlayerPrefs.SetInt(CoinKey, statHandler.CoinCount);
+        }
 
+        private void LoadCoin()
+        {
+            int saved = PlayerPrefs.GetInt(CoinKey, 0);
+            statHandler.SetCoin(saved);
+            UIManager.Instance.UpdateCoinUI(saved);
+        }
     }
 }
