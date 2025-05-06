@@ -12,8 +12,8 @@ namespace Entity
     
         private float timeSinceLastChange = float.MaxValue;
 
-        public float CurrentHealth { get; private set; }
-        public float MaxHealth => statHandler.Health;
+        public int CurrentHealth { get; private set; }
+        public int MaxHealth => statHandler.MaxHealth;
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace Entity
 
         private void Start()
         {
-            CurrentHealth = statHandler.Health;
+            CurrentHealth = MaxHealth;
         }
 
         private void Update()
@@ -39,29 +39,26 @@ namespace Entity
             }
         }
 
-        public bool ChangeHealth(float change)
+        public bool ChangeHealth(int amount)
         {
-            if (change == 0 || timeSinceLastChange < healthChangeDelay)
-            {
+            if (amount == 0 || timeSinceLastChange < healthChangeDelay)
                 return false;
-            }
 
             timeSinceLastChange = 0f;
-            CurrentHealth += change;
-            CurrentHealth = CurrentHealth > MaxHealth ? MaxHealth : CurrentHealth;
-            CurrentHealth = CurrentHealth < 0 ? 0 : CurrentHealth;
 
-            if (change < 0)
+            CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, MaxHealth);
+
+            if (amount < 0)
             {
                 animationHandler.Damage();
-            
             }
 
-            if (CurrentHealth <= 0f)
+            if (CurrentHealth <= 0)
             {
                 Death();
             }
 
+            UIManager.Instance.UpdateHearts(CurrentHealth);
             return true;
         }
 

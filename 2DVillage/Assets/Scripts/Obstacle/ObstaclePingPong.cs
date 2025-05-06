@@ -1,12 +1,14 @@
 using UnityEngine;
+using Entity;
 
-namespace Entity.Obstacle
+namespace Obstacle
 {
     public class ObstaclePingPong : MonoBehaviour
     {
         public Vector2 moveDirection = Vector2.right;
         public float moveDistance = 3f;
         public float moveSpeed = 2f;
+        private readonly int damageAmount = 1;
 
         private Vector3 startPos;
         private SpriteRenderer spriteRenderer;
@@ -29,6 +31,18 @@ namespace Entity.Obstacle
             if (spriteRenderer)
             {
                 spriteRenderer.flipX = movingBack;
+            }
+        }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                ResourceController rc = other.GetComponent<ResourceController>();
+                if (rc != null)
+                {
+                    rc.ChangeHealth(-damageAmount);
+                }
             }
         }
     }

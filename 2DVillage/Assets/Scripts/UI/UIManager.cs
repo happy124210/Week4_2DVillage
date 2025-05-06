@@ -4,30 +4,26 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-    public Sprite heartFull, heartHalf, heartEmpty;
-    public Image[] heartImages;
+    [SerializeField] private Sprite fullHeart, halfHeart, emptyHeart;
+    [SerializeField] private Image[] heartImages;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
     }
     
-    public void UpdateHeartUI(int currentLife, int maxLife)
+    public void UpdateHearts(int currentHealth)
     {
-        int heartCount = heartImages.Length;
-
-        for (int i = 0; i < heartCount; i++)
+        for (int i = 0; i < heartImages.Length; i++)
         {
-            int value = currentLife - (i * 2);
-        
-            if (value >= 2)
-                heartImages[i].sprite = heartFull;
-            else if (value == 1)
-                heartImages[i].sprite = heartHalf;
-            else
-                heartImages[i].sprite = heartEmpty;
+            int heartValue = currentHealth - (i * 2);
 
-            heartImages[i].enabled = (i * 2 < maxLife);
+            if (heartValue >= 2)
+                heartImages[i].sprite = fullHeart;
+            else if (heartValue == 1)
+                heartImages[i].sprite = halfHeart;
+            else
+                heartImages[i].sprite = emptyHeart;
         }
     }
 }

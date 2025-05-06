@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Entity;
 
 namespace Obstacle
 {
@@ -9,6 +10,7 @@ namespace Obstacle
         private Collider2D spikeCollider;
 
         [SerializeField] private float interval = 2f;
+        private readonly int damageAmount = 1;
     
         private static readonly int Pop = Animator.StringToHash("Pop");
 
@@ -40,7 +42,11 @@ namespace Obstacle
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Player hit by spike!");
+                ResourceController rc = other.GetComponent<ResourceController>();
+                if (rc != null)
+                {
+                    rc.ChangeHealth(-damageAmount);
+                }
             }
         }
     }
