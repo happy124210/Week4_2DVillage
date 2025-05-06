@@ -9336,6 +9336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MinigameCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 6860546758181851548, guid: 172d1687647c32c40b75feb399194c65, type: 3}
+      propertyPath: sceneToLoad
+      value: 'DungeonScene '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
