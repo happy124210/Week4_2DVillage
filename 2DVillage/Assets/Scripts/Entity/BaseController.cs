@@ -27,11 +27,13 @@ namespace Entity
         private float knockbackDuration;
 
         protected AnimationHandler animationHandler;
+        protected StatHandler statHandler;
 
         protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             animationHandler = GetComponent<AnimationHandler>();
+            statHandler = GetComponent<StatHandler>();
         }
 
 
@@ -66,7 +68,7 @@ namespace Entity
 
         private void Movement(Vector2 direction)
         {
-            direction = direction * 5; // stat기반 변경 예정
+            direction = direction * statHandler.Speed;
             if (knockbackDuration > 0.0f)
             {
                 direction *= 0.2f;
