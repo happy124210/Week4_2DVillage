@@ -12786,7 +12786,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_606
+      name: ui_heart_full
       rect:
         serializedVersion: 2
         x: 288
@@ -12807,7 +12807,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_607
+      name: ui_heart_half
       rect:
         serializedVersion: 2
         x: 304
@@ -12828,7 +12828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_608
+      name: ui_heart_empty
       rect:
         serializedVersion: 2
         x: 320
@@ -16490,7 +16490,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -16511,7 +16511,7 @@ TextureImporter:
         width: 9
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -17099,9 +17099,6 @@ TextureImporter:
       dungeontileset-extended_603: 444731314
       dungeontileset-extended_604: 1554469175
       dungeontileset-extended_605: 644714085
-      dungeontileset-extended_606: 1252493761
-      dungeontileset-extended_607: -1124659891
-      dungeontileset-extended_608: -385142364
       dungeontileset-extended_609: 1187865718
       dungeontileset-extended_61: 648828662
       dungeontileset-extended_613: -1467592197
@@ -17317,6 +17314,9 @@ TextureImporter:
       necromancer_anim_1: 805917971
       necromancer_anim_2: 762355410
       necromancer_anim_3: -810903832
+      ui_heart_empty: -385142364
+      ui_heart_full: 1252493761
+      ui_heart_half: -1124659891
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
