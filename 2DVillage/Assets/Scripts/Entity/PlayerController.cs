@@ -19,7 +19,7 @@ namespace Entity
             base.FixedUpdate();
 
             bool isWalking = movementDirection.magnitude > 0.1f;
-            AudioManager.Instance.SetStepLoop(isWalking);
+            AudioManager.Instance.HandleStepSound(isWalking);
         }
 
         

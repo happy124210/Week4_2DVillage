@@ -19,6 +19,11 @@ namespace Manager
         // SFX Clips
         private AudioClip hitSound;
         private AudioClip dialogueSound;
+        private AudioClip stepSound;
+        private AudioClip coinSound;
+        
+        private float stepTimer;
+        private readonly float StepInterval = 0.3f;
 
         private void Awake()
         {
@@ -33,6 +38,8 @@ namespace Manager
             dungeonSceneBGM = Resources.Load<AudioClip>("BGM/dungeonSceneBGM");
             hitSound = Resources.Load<AudioClip>("Audio/Hit");
             dialogueSound = Resources.Load<AudioClip>("Audio/Dialogue");
+            stepSound = Resources.Load<AudioClip>("Audio/Step");
+            coinSound =  Resources.Load<AudioClip>("Audio/Coin");
         }
 
         private void OnEnable()
@@ -72,15 +79,25 @@ namespace Manager
         }
         
         
-        public void SetStepLoop(bool isWalking)
+        public void HandleStepSound(bool isWalking)
         {
-            if (isWalking && !stepSource.isPlaying)
-                stepSource.Play();
-            else if (!isWalking && stepSource.isPlaying)
-                stepSource.Stop();
+            if (!isWalking)
+            {
+                stepTimer = 0f;
+                return;
+            }
+
+            stepTimer += Time.deltaTime;
+
+            if (stepTimer >= StepInterval)
+            {
+                stepTimer = 0f;
+                sfxSource.PlayOneShot(stepSound);
+            }
         }
 
         public void PlayHit() => sfxSource.PlayOneShot(hitSound);
         public void PlayDialogue() => sfxSource.PlayOneShot(dialogueSound);
+        public void PlayCoin() => sfxSource.PlayOneShot(coinSound);
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Entity;
+using Manager;
 
 namespace Obstacle
 {
@@ -15,6 +16,7 @@ namespace Obstacle
             if (rc != null)
             {
                 rc.AddCoin(CoinAmount);
+                AudioManager.Instance.PlayCoin();
             }
 
             Destroy(gameObject);
