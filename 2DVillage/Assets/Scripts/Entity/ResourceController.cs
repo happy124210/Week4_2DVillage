@@ -1,4 +1,5 @@
 using UnityEngine;
+using UI;
 
 namespace Entity
 {
@@ -41,6 +42,12 @@ namespace Entity
                 {
                     animationHandler.InvincibilityEnd();
                 }
+            }
+            
+            // Debug Button
+            if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.R))
+            {
+                ResetCoin();
             }
         }
 
@@ -89,6 +96,14 @@ namespace Entity
             int saved = PlayerPrefs.GetInt(CoinKey, 0);
             statHandler.SetCoin(saved);
             UIManager.Instance.UpdateCoinUI(saved);
+        }
+        
+        
+        private void ResetCoin()
+        {
+            PlayerPrefs.DeleteKey(CoinKey);
+            statHandler.SetCoin(0);
+            UIManager.Instance.UpdateCoinUI(0);
         }
     }
 }
