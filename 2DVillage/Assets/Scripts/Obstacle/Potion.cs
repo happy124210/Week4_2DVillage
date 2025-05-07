@@ -1,4 +1,5 @@
 using Entity;
+using Manager;
 using UnityEngine;
 
 namespace Obstacle
@@ -10,6 +11,7 @@ namespace Obstacle
             if (!other.CompareTag("Player")) return;
         
             MinigameManager.Instance.hasPotion = true;
+            AudioManager.Instance.PlayCoin();
             Destroy(gameObject);
         }
     }
