@@ -1,25 +1,47 @@
-using System;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class InteractUI : MonoBehaviour
+namespace UI
 {
-    [SerializeField] private GameObject interactPrompt;
-
-    private void Start()
+    public class InteractUI : MonoBehaviour
     {
-        interactPrompt.SetActive(false);
-    }
+        [Header("Interaction")]
+        [SerializeField] private GameObject interactPrompt;
+        [SerializeField] private KeyCode interactKey;
+        [SerializeField] private UnityEvent onInteract;
+    
+        private bool isPlayerInRange = false;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-            interactPrompt.SetActive(true);
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        private void Start()
+        {
             interactPrompt.SetActive(false);
-    }
+        }
 
+        private void Update()
+        {
+            if (isPlayerInRange && Input.GetKeyDown(interactKey))
+            {
+                onInteract?.Invoke();
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                interactPrompt.SetActive(true);
+                isPlayerInRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                interactPrompt.SetActive(false);
+                isPlayerInRange = false;
+            }
+        }
+    }
 }
+

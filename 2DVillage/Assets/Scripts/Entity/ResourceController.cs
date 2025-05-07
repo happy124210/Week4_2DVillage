@@ -77,7 +77,7 @@ namespace Entity
         
         private void Death()
         {
-            
+            MinigameManager.Instance.GameOver();
         }
         
         

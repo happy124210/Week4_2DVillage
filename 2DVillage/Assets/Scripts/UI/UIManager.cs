@@ -11,7 +11,11 @@ namespace UI
         [SerializeField] private Image[] heartImages;
     
         [SerializeField] private TextMeshProUGUI coinText;
+        [SerializeField] private TextMeshProUGUI resultText;
         [SerializeField] private GameObject introUI;
+        
+        [SerializeField] private GameObject resultPanel;
+        [SerializeField] private GameObject clearPanel;
 
         private void Awake()
         {
@@ -51,5 +55,18 @@ namespace UI
             introUI.SetActive(false);
         }
 
+
+        public void ShowResultUI(string result, int resultCoin)
+        {
+            resultPanel.SetActive(true);
+            resultText.text = result;
+            coinText.text = resultCoin.ToString();
+        }
+
+
+        public void ShowClearUI()
+        {
+            clearPanel.SetActive(true);
+        }
     }
 }

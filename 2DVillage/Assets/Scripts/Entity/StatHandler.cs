@@ -19,12 +19,6 @@ namespace Entity
             get => speed;
             set => speed = Mathf.Clamp(value,0,20);
         }
-
-        
-        public void ResetHealth()
-        {
-            health = MaxHealth;
-        }
         
         
         public void SetCoin(int value)
