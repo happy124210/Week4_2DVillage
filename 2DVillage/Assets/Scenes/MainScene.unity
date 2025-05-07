@@ -8891,6 +8891,8 @@ GameObject:
   - component: {fileID: 1542859330}
   - component: {fileID: 1542859329}
   - component: {fileID: 1542859333}
+  - component: {fileID: 1542859334}
+  - component: {fileID: 1542859335}
   m_Layer: 5
   m_Name: UICanvas
   m_TagString: Untagged
@@ -8994,19 +8996,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7356d18862f60479e29d7156b1abee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHeart: {fileID: 1252493761, guid: c0e529b7a62037c4f99a1279f81cefc9, type: 3}
-  halfHeart: {fileID: -1124659891, guid: c0e529b7a62037c4f99a1279f81cefc9, type: 3}
-  emptyHeart: {fileID: -385142364, guid: c0e529b7a62037c4f99a1279f81cefc9, type: 3}
+--- !u!114 &1542859334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542859328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b695255eb75ea8a4db5134eeb7052cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHeart: {fileID: 0}
+  halfHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
   heartImages:
   - {fileID: 1299595784}
   - {fileID: 584281897}
   - {fileID: 959159191}
   - {fileID: 882692645}
+--- !u!114 &1542859335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542859328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757298172069f54c8940babdb5227e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   coinText: {fileID: 133412415117297101}
-  resultText: {fileID: 0}
-  introUI: {fileID: 0}
-  resultPanel: {fileID: 0}
-  clearPanel: {fileID: 0}
 --- !u!1 &1753557695
 GameObject:
   m_ObjectHideFlags: 0

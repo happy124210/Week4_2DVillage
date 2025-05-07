@@ -12195,8 +12195,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: TopUI
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6056829023999062375, guid: 025e64fb6ca0f6048af85081c4dd73bc, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -14332,6 +14331,9 @@ GameObject:
   - component: {fileID: 1417620321}
   - component: {fileID: 1417620320}
   - component: {fileID: 1417620324}
+  - component: {fileID: 1417620327}
+  - component: {fileID: 1417620326}
+  - component: {fileID: 1417620325}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -14437,19 +14439,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7356d18862f60479e29d7156b1abee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullHeart: {fileID: 21300000, guid: 5ae55160985c24343a91fbd5705682be, type: 2}
-  halfHeart: {fileID: 21300000, guid: 71165cf9b122fc34492cd09d7d0ef1ed, type: 2}
-  emptyHeart: {fileID: 21300000, guid: 728c828264c10234480b7f88804935f8, type: 2}
+--- !u!114 &1417620325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417620319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd091a2761f3cf645b35a08d2588edaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  introPanel: {fileID: 1085145520}
+  resultPanel: {fileID: 611633617}
+  clearPanel: {fileID: 1349381854}
+  resultText: {fileID: 904780653}
+  resultCoinText: {fileID: 2048244964}
+--- !u!114 &1417620326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417620319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b695255eb75ea8a4db5134eeb7052cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fullHeart: {fileID: 0}
+  halfHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
   heartImages:
   - {fileID: 975510314}
   - {fileID: 1989344889}
   - {fileID: 146274372}
   - {fileID: 120347725}
+--- !u!114 &1417620327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417620319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6757298172069f54c8940babdb5227e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   coinText: {fileID: 496124110}
-  resultText: {fileID: 904780653}
-  introUI: {fileID: 1085145520}
-  resultPanel: {fileID: 611633617}
-  clearPanel: {fileID: 1349381854}
 --- !u!1001 &1432402524
 PrefabInstance:
   m_ObjectHideFlags: 0
