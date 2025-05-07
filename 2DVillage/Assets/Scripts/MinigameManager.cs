@@ -1,4 +1,3 @@
-using System;
 using Entity;
 using UI;
 using UnityEngine;
@@ -17,7 +16,6 @@ public class MinigameManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null) Instance = this;
-
         statHandler = FindObjectOfType<StatHandler>();
         Time.timeScale = 0f;
     }

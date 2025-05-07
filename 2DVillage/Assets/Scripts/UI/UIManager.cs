@@ -1,7 +1,4 @@
-using TMPro;
-using UnityEditor.Experimental.Rendering;
 using UnityEngine;
-
 
 namespace UI
 {
@@ -30,7 +27,8 @@ namespace UI
                 HideAllUI();
             }
         }
-    
+        
+        
         public void UpdateHearts(int currentHealth)
         {
             heartUI.UpdateHearts(currentHealth);

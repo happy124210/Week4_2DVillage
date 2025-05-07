@@ -38,8 +38,8 @@ namespace Entity
         {
             CurrentHealth = MaxHealth;
             LoadCoin();
-            UIManager.Instance.UpdateCoinUI(statHandler.CoinCount);
         }
+        
 
         private void Update()
         {
