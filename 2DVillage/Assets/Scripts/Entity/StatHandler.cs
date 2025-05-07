@@ -14,7 +14,7 @@ namespace Entity
             set => health = Mathf.Clamp(value,0,8);
         } 
     
-        [Range(1f, 20f)] [SerializeField] private float speed = 3;
+        [Range(1f, 20f)] [SerializeField] private float speed = 5;
         public float Speed{
             get => speed;
             set => speed = Mathf.Clamp(value,0,20);

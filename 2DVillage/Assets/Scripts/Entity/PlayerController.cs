@@ -33,7 +33,7 @@ namespace Entity
             Vector2 worldPos = camera.ScreenToWorldPoint(mousePosition);
             lookDirection = (worldPos - (Vector2)transform.position);
 
-            lookDirection = (lookDirection.magnitude < .9f) // deadzone
+            lookDirection = (lookDirection.magnitude < .9f)
                 ? Vector2.zero
                 : lookDirection.normalized;
         }

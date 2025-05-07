@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -5,6 +7,9 @@ namespace UI
     public class UIManager : MonoBehaviour
     {
         public static UIManager Instance { get; private set; }
+        [SerializeField] private TextMeshProUGUI alertText;
+        
+        private Coroutine alertCoroutine;
         
         private HeartUI heartUI;
         private CoinUI coinUI;
@@ -64,9 +69,26 @@ namespace UI
         }
 
 
-        public void HideAllUI()
+        private void HideAllUI()
         {
             resultUI.HideAll();
+        }
+        
+        
+        public void ShowAlert(string msg, float duration = 2f)
+        {
+            if (alertCoroutine != null)
+                StopCoroutine(alertCoroutine);
+            alertCoroutine = StartCoroutine(AlertRoutine(msg, duration));
+        }
+        
+        // TODO 추후 공용으로 쓸 수 있게 알림창으로 분리
+        private IEnumerator AlertRoutine(string msg, float duration)
+        {
+            alertText.text = msg;
+            alertText.gameObject.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            alertText.gameObject.SetActive(false);
         }
     }
 }

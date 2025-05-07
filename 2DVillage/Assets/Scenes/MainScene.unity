@@ -8996,6 +8996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7356d18862f60479e29d7156b1abee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alertText: {fileID: 0}
 --- !u!114 &1542859334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10005,6 +10006,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3106584883366022398, guid: 5f8eff2b439673049a86f779c57e3d16, type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5022612800565911724, guid: 5f8eff2b439673049a86f779c57e3d16, type: 3}
       propertyPath: m_Name
       value: Player
