@@ -6,24 +6,32 @@ namespace Entity
     public class ResourceController : MonoBehaviour
     {
         [SerializeField] private float healthChangeDelay = .5f;
-
-        private BaseController baseController;
+        
         private StatHandler statHandler;
         private AnimationHandler animationHandler;
     
         private float timeSinceLastChange = float.MaxValue;
+        private float TimeSinceLastChange
+        {
+            get => timeSinceLastChange;
+            set
+            {
+                timeSinceLastChange = value;
+                if (timeSinceLastChange >= healthChangeDelay)
+                    animationHandler.InvincibilityEnd();
+            }
+        }
 
         public int CurrentHealth { get; private set; }
         public int MaxHealth => statHandler.MaxHealth;
         public int CoinCount => statHandler.CoinCount;
         
-        private const string CoinKey = "coin_count";
+        private const string CoinKey = "coinCount";
 
         private void Awake()
         {
             statHandler = GetComponent<StatHandler>();
             animationHandler = GetComponent<AnimationHandler>();
-            baseController = GetComponent<BaseController>();
         }
 
         private void Start()
@@ -35,13 +43,9 @@ namespace Entity
 
         private void Update()
         {
-            if (timeSinceLastChange < healthChangeDelay)
+            if (TimeSinceLastChange < healthChangeDelay)
             {
-                timeSinceLastChange += Time.deltaTime;
-                if (timeSinceLastChange >= healthChangeDelay)
-                {
-                    animationHandler.InvincibilityEnd();
-                }
+                TimeSinceLastChange += Time.deltaTime;
             }
             
             // Debug Button
@@ -53,10 +57,10 @@ namespace Entity
 
         public bool ChangeHealth(int amount)
         {
-            if (amount == 0 || timeSinceLastChange < healthChangeDelay)
+            if (amount == 0 || TimeSinceLastChange < healthChangeDelay)
                 return false;
 
-            timeSinceLastChange = 0f;
+            TimeSinceLastChange = 0f;
 
             CurrentHealth = Mathf.Clamp(CurrentHealth + amount, 0, MaxHealth);
 

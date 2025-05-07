@@ -7,7 +7,6 @@ namespace Entity
         protected Rigidbody2D _rigidbody;
 
         [SerializeField] private SpriteRenderer characterRenderer;
-        [SerializeField] private Transform weaponPivot;
 
         protected Vector2 movementDirection = Vector2.zero;
 
@@ -46,7 +45,6 @@ namespace Entity
         protected virtual void Update()
         {
             HandleAction();
-            Rotate(lookDirection);
         }
 
 
@@ -77,20 +75,6 @@ namespace Entity
 
             _rigidbody.velocity = direction;
             animationHandler.Move(direction);
-        }
-
-
-        private void Rotate(Vector2 direction)
-        {
-            float rotZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            bool isLeft = Mathf.Abs(rotZ) > 90f;
-
-            characterRenderer.flipX = isLeft;
-
-            if (weaponPivot != null)
-            {
-                weaponPivot.rotation = Quaternion.Euler(0, 0, rotZ);
-            }
         }
 
 
