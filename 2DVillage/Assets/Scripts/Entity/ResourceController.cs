@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 using UI;
 
@@ -67,6 +68,7 @@ namespace Entity
             if (amount < 0)
             {
                 animationHandler.Damage();
+                AudioManager.Instance.PlayHit();
             }
 
             if (CurrentHealth <= 0)

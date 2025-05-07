@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 
 namespace Entity
@@ -10,7 +11,16 @@ namespace Entity
         {
             base.Start();
             camera = Camera.main;
-        }    
+        }  
+        
+        
+        protected override void FixedUpdate()
+        {
+            base.FixedUpdate();
+
+            bool isWalking = movementDirection.magnitude > 0.1f;
+            AudioManager.Instance.SetStepLoop(isWalking);
+        }
 
         
         protected override void HandleAction()

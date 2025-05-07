@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 
 namespace UI
@@ -41,6 +42,7 @@ namespace UI
         {
             string line = currentData.dialogueLines[currentIndex];
             dialogueUI.ShowDialogueUI(currentData.npcName, line, currentData.portrait);
+            AudioManager.Instance.PlayDialogue();
         }
 
         public void EndDialogue()
