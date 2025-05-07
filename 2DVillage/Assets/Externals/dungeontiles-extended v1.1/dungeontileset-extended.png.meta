@@ -10350,7 +10350,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_489
+      name: potion_green
       rect:
         serializedVersion: 2
         x: 320
@@ -16020,7 +16020,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_760
+      name: panel_wall_wood
       rect:
         serializedVersion: 2
         x: 320
@@ -16041,7 +16041,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_761
+      name: panel_wall_written_whitewood
       rect:
         serializedVersion: 2
         x: 336
@@ -16230,7 +16230,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_770
+      name: panel_wall_whitewood
       rect:
         serializedVersion: 2
         x: 320
@@ -16440,7 +16440,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_780
+      name: panel_floor_written_wood
       rect:
         serializedVersion: 2
         x: 320
@@ -16461,7 +16461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_781
+      name: panel_floor_written_whitewood
       rect:
         serializedVersion: 2
         x: 336
@@ -16969,7 +16969,6 @@ TextureImporter:
       dungeontileset-extended_486: -729681728
       dungeontileset-extended_487: -2026755277
       dungeontileset-extended_488: -868826602
-      dungeontileset-extended_489: 330076957
       dungeontileset-extended_49: 1996761787
       dungeontileset-extended_490: -611089488
       dungeontileset-extended_491: -1135579336
@@ -17262,8 +17261,6 @@ TextureImporter:
       dungeontileset-extended_758: -610166529
       dungeontileset-extended_759: 1344820075
       dungeontileset-extended_76: -2011388080
-      dungeontileset-extended_760: -1175331985
-      dungeontileset-extended_761: 880795584
       dungeontileset-extended_762: -1925627577
       dungeontileset-extended_763: 1480371611
       dungeontileset-extended_764: 497003185
@@ -17273,7 +17270,6 @@ TextureImporter:
       dungeontileset-extended_768: -1386012746
       dungeontileset-extended_769: -1444110884
       dungeontileset-extended_77: -646634766
-      dungeontileset-extended_770: 1724016818
       dungeontileset-extended_771: -2035298259
       dungeontileset-extended_772: -1590339781
       dungeontileset-extended_773: 1304573824
@@ -17284,8 +17280,6 @@ TextureImporter:
       dungeontileset-extended_778: 640118443
       dungeontileset-extended_779: 1372970862
       dungeontileset-extended_78: 1078753870
-      dungeontileset-extended_780: 1556975237
-      dungeontileset-extended_781: 706044329
       dungeontileset-extended_79: 2011122261
       dungeontileset-extended_8: -2093862966
       dungeontileset-extended_80: -475180381
@@ -17314,6 +17308,12 @@ TextureImporter:
       necromancer_anim_1: 805917971
       necromancer_anim_2: 762355410
       necromancer_anim_3: -810903832
+      panel_floor_written_whitewood: 706044329
+      panel_floor_written_wood: 1556975237
+      panel_wall_whitewood: 1724016818
+      panel_wall_wood: -1175331985
+      panel_wall_written_whitewood: 880795584
+      potion_green: 330076957
       ui_heart_empty: -385142364
       ui_heart_full: 1252493761
       ui_heart_half: -1124659891

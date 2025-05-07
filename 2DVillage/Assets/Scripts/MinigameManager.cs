@@ -1,10 +1,12 @@
 using System;
+using Entity;
 using UI;
 using UnityEngine;
 
 public class MinigameManager : MonoBehaviour
 {
     private bool isPlaying;
+    private StatHandler statHandler;
     
     private void Awake()
     {
@@ -14,6 +16,7 @@ public class MinigameManager : MonoBehaviour
     private void Start()
     {
         UIManager.Instance.ShowIntroUI();
+        statHandler.ResetHealth();
     }
     
     

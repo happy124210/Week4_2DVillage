@@ -74,10 +74,12 @@ namespace Entity
             return true;
         }
 
+        
         private void Death()
         {
-
+            
         }
+        
         
         public void AddCoin(int amount)
         {
@@ -86,11 +88,13 @@ namespace Entity
             UIManager.Instance.UpdateCoinUI(statHandler.CoinCount);
         }
         
+        
         private void SaveCoin()
         {
             PlayerPrefs.SetInt(CoinKey, statHandler.CoinCount);
         }
 
+        
         private void LoadCoin()
         {
             int saved = PlayerPrefs.GetInt(CoinKey, 0);

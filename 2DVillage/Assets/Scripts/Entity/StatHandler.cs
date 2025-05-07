@@ -4,14 +4,14 @@ namespace Entity
 {
     public class StatHandler : MonoBehaviour
     {
-        [SerializeField] private int health = 6; // 3hearts = 6
+        [SerializeField] private int health = 8; // 4hearts = 8
         public int MaxHealth => health;
         private int coinCount;
         public int CoinCount => coinCount;
     
         public int Health{
             get => health;
-            set => health = Mathf.Clamp(value,0,100);
+            set => health = Mathf.Clamp(value,0,8);
         } 
     
         [Range(1f, 20f)] [SerializeField] private float speed = 3;
@@ -19,6 +19,13 @@ namespace Entity
             get => speed;
             set => speed = Mathf.Clamp(value,0,20);
         }
+
+        
+        public void ResetHealth()
+        {
+            health = MaxHealth;
+        }
+        
         
         public void SetCoin(int value)
         {
